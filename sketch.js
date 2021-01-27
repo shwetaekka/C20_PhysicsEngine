@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 
-var engine, world;
+var engine, world,ball;
 
 var object;
 
@@ -18,7 +18,8 @@ function setup() {
 
   object = Bodies.rectangle(400, 380, 800, 20, options);
   World.add(world, object);
-
+ball=Bodies.circle(200,320,10,options);
+World.add(world, ball);
   console.log(object);
   console.log(object.position);
   
@@ -26,13 +27,13 @@ function setup() {
 }
 
 function draw() {
-  background('lightyellow');  
+  background('#34ADD7');  
   Engine.update(engine);
 
-  fill('brown');
+  fill('#58F609');
   rectMode(CENTER);
   rect(object.position.x, object.position.y,800,20);
-
+circle(ball.position.x,ball.position.y,100,20);
 
  
 }
